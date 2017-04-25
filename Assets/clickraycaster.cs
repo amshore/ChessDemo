@@ -4,19 +4,34 @@ using UnityEngine;
 
 public class clickraycaster : MonoBehaviour {
 
-//    Tile tilescript;
+    
 
 	// Update is called once per frame
-/*	void Update () {
+	void Update () {
 		if (Input.GetMouseButtonDown (0))
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast (ray,out hit, 100.0f))
             {
-                tilescript = hit.collider.gameObject.GetComponent<Tile>();
+				if(hit.collider.gameObject.tag == "Tile")
+				{
+					((Piece)hit.collider.gameObject.GetComponent("Piece")).canMoveList();
+				}
+				else if(hit.collider.gameObject.tag == "Piece")
+				{
+					//hit.collider.gameObject.GetComponent("Piece").canMoveList();
+				}
+				else if(hit.collider.gameObject.tag == "Board")
+				{
+					//hit.collider.gameObject.GetComponent("Piece").canMoveList();
+				}
+				else
+				{
+					//player clicked on empty space
+				}
                 Debug.Log("You selected the " + hit.collider.gameObject.name);
             }
         }
-	}*/
+	}
 }
