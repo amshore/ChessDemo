@@ -1,0 +1,22 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class clickraycaster : MonoBehaviour {
+
+    Tile tilescript;
+
+	// Update is called once per frame
+	void Update () {
+		if (Input.GetMouseButtonDown (0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast (ray,out hit, 100.0f))
+            {
+                tilescript = hit.collider.gameObject.GetComponent<Tile>();
+                Debug.Log("You selected the " + hit.collider.gameObject.name);
+            }
+        }
+	}
+}
