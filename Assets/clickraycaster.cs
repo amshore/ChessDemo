@@ -14,11 +14,11 @@ public class clickraycaster : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast (ray,out hit, 100.0f))
             {
-				if(hit.collider.gameObject.tag == "Tile")
+				if(hit.collider.gameObject.tag == "Piece")
 				{
 					((Piece)hit.collider.gameObject.GetComponent("Piece")).canMoveList();
 				}
-				else if(hit.collider.gameObject.tag == "Piece")
+				else if(hit.collider.gameObject.tag == "Tile")
 				{
 					//hit.collider.gameObject.GetComponent("Piece").canMoveList();
 				}
