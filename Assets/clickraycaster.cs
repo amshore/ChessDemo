@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class clickraycaster : MonoBehaviour {
 
-    Tile tilescript;
+//    Tile tilescript;
 
 	// Update is called once per frame
-	void Update () {
+/*	void Update () {
 		if (Input.GetMouseButtonDown (0))
         {
             RaycastHit hit;
@@ -18,5 +18,5 @@ public class clickraycaster : MonoBehaviour {
                 Debug.Log("You selected the " + hit.collider.gameObject.name);
             }
         }
-	}
+	}*/
 }

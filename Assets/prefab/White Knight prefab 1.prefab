@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 65683547009958906}
   m_Layer: 0
   m_Name: White Knight prefab 1
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10da6a90552c844ea8c5e22f93a469c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allegiance: 0
   Whiteprefab: {fileID: 1738728039111726}
   Blackprefab: {fileID: 1178951763100042, guid: 8066652c81ee441299139749cfc7c038,
     type: 2}

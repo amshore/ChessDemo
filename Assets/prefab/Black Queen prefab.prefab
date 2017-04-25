@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65371031937409654}
   m_Layer: 0
   m_Name: Black Queen prefab
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,7 +222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0298be3d29d9b4e94abfae3079c210f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allegiance: 1
   Whiteprefab: {fileID: 1873407900237012, guid: e741bf65fbec94f45987a03e826d3c0a,
     type: 2}
   Blackprefab: {fileID: 1456321543846052}
