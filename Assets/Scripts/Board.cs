@@ -118,10 +118,37 @@ public class Board : Singleton<Board>
 
     public void generatePiece(PlayerE player, Point p, Piece.PieceTypeE piece, GameObject prefab, string str)
     {
-        GameObject go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.75f, p.turnToWorld()[1]), Quaternion.identity);
-        ((Piece)go.GetComponent(str)).initialize((int)player, p, this, piece);
+		GameObject go;
+		if (piece == Piece.PieceTypeE.KING) {
+			go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.45f, p.turnToWorld()[1] + .35f), Quaternion.identity);
+			((Piece)go.GetComponent(str)).initialize((int)player, p, this, piece);
+		}
+
+		else if (piece == Piece.PieceTypeE.QUEEN) {
+			go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.65f, p.turnToWorld()[1]), Quaternion.identity);
+			((Piece)go.GetComponent(str)).initialize((int)player, p, this, piece);
+		}
+
+		else if (piece == Piece.PieceTypeE.BISHOP) {
+			go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.6f, p.turnToWorld()[1]), Quaternion.identity);
+			((Piece)go.GetComponent(str)).initialize((int)player, p, this, piece);
+		}
+
+		else if (piece == Piece.PieceTypeE.KNIGHT) {
+			go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.75f, p.turnToWorld()[1]), Quaternion.identity);
+			((Piece)go.GetComponent(str)).initialize((int)player, p, this, piece);
+		}
+
+		else if (piece == Piece.PieceTypeE.ROOK) {
+			go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.75f, p.turnToWorld()[1]), Quaternion.identity);
+			((Piece)go.GetComponent(str)).initialize((int)player, p, this, piece);
+		}
+		else {
+			go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.5f, p.turnToWorld()[1]), Quaternion.identity);
+			((Piece)go.GetComponent(str)).initialize((int)player, p, this, piece);
+		}
         if (piece == Piece.PieceTypeE.KING)
-            go.transform.localScale = new Vector3(1f, 1f, 1f);
+            go.transform.localScale = new Vector3(2f, 2f, 2f);
         else
             go.transform.localScale = new Vector3(4f, 4f, 4f);
         boardPieces[p.getX(), p.getY()] = go;
@@ -394,7 +421,7 @@ public class Board : Singleton<Board>
         destroyTileField();
         foreach(Point p in pointList)
         {
-            tileList.Add(Instantiate(tilePrefab, new Vector3(p.turnToWorld()[0], 0.75f, p.turnToWorld()[1]), Quaternion.identity));
+            tileList.Add(Instantiate(tilePrefab, new Vector3(p.turnToWorld()[0], 0.52f, p.turnToWorld()[1]), Quaternion.identity));
         }
     }
 

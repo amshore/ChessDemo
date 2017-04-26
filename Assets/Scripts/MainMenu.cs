@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour {
 	public bool isEasy;
 	public bool isMedium;
 	public bool isHard;
+	public bool isBack;
 
 	void OnMouseUp(){
 		if (isSinglePlayer) {
@@ -31,5 +32,10 @@ public class MainMenu : MonoBehaviour {
 			Application.LoadLevel (4);
 			GetComponent<Renderer> ().material.color = Color.cyan;
 		}
+		if (isBack) {
+			Application.LoadLevel (0);
+			GetComponent<Renderer> ().material.color = Color.cyan;
+		}
+	
 	}
 }

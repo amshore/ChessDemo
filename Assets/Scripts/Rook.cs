@@ -114,4 +114,10 @@ public class Rook : Piece {
         }
         return mt;
     }
+
+	public override void moveObjectLoc(Point pt)
+	{
+		loc = pt;
+		gameObject.transform.position = new Vector3(pt.turnToWorld()[0], .75f, pt.turnToWorld()[1]);
+	}
 }
