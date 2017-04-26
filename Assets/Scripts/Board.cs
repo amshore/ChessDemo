@@ -69,6 +69,12 @@ public class Board : Singleton<Board>
             case 0:
                 bg.defaultSetup();
                 break;
+			case 1:
+				bg.Puzzle1 ();
+				break;
+			case 2:
+				bg.Puzzle2 ();
+				break;
             default:
                 bg.defaultSetup();
                 break;
