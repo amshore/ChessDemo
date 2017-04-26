@@ -118,8 +118,35 @@ public class Board : Singleton<Board>
 
     public void generatePiece(PlayerE player, Point p, Piece.PieceTypeE piece, GameObject prefab, string str)
     {
-        GameObject go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.75f, p.turnToWorld()[1]), Quaternion.identity);
-        ((Piece)go.GetComponent(str)).initialize((int)player, p, this, piece);
+		GameObject go;
+		if (piece == Piece.PieceTypeE.KING) {
+			go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.75f, p.turnToWorld()[1]), Quaternion.identity);
+			((Piece)go.GetComponent(str)).initialize((int)player, p, this, piece);
+		}
+
+		else if (piece == Piece.PieceTypeE.QUEEN) {
+			go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.75f, p.turnToWorld()[1]), Quaternion.identity);
+			((Piece)go.GetComponent(str)).initialize((int)player, p, this, piece);
+		}
+
+		else if (piece == Piece.PieceTypeE.BISHOP) {
+			go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.75f, p.turnToWorld()[1]), Quaternion.identity);
+			((Piece)go.GetComponent(str)).initialize((int)player, p, this, piece);
+		}
+
+		else if (piece == Piece.PieceTypeE.KNIGHT) {
+			go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.75f, p.turnToWorld()[1]), Quaternion.identity);
+			((Piece)go.GetComponent(str)).initialize((int)player, p, this, piece);
+		}
+
+		else if (piece == Piece.PieceTypeE.ROOK) {
+			go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.75f, p.turnToWorld()[1]), Quaternion.identity);
+			((Piece)go.GetComponent(str)).initialize((int)player, p, this, piece);
+		}
+		else {
+			go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.75f, p.turnToWorld()[1]), Quaternion.identity);
+			((Piece)go.GetComponent(str)).initialize((int)player, p, this, piece);
+		}
         if (piece == Piece.PieceTypeE.KING)
             go.transform.localScale = new Vector3(1f, 1f, 1f);
         else
