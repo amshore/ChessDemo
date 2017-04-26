@@ -5,5 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/basictest1.unity
+    guid: fb89736733207a341ba38e645a40253f
+  - enabled: 1
+    path: Assets/ARChessScene2.unity
+    guid: 229daf8bc354ec548b7a5315655263b9
