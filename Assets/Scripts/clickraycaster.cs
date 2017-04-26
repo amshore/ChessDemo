@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class clickraycaster : MonoBehaviour {
 
-<<<<<<< HEAD
 	List<Point> list;
 	Board gameboard;
 
@@ -12,12 +11,6 @@ public class clickraycaster : MonoBehaviour {
 	{
 		gameboard = new Board();
 	}
-=======
-/*    Tile tilescript;
-=======
-    
->>>>>>> origin/master
->>>>>>> origin/master
 
 	// Update is called once per frame
 	void Update () {
@@ -85,5 +78,5 @@ public class clickraycaster : MonoBehaviour {
                 Debug.Log("You selected the " + hit.collider.gameObject.name);
             }
         }
-	}*/
+	}
 }
