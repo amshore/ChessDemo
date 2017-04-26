@@ -9,7 +9,7 @@ public class clickraycaster : MonoBehaviour {
 
 	void Start()
 	{
-		gameboard = new Board();
+		gameboard = Board.Instance;
 	}
 
 	// Update is called once per frame
@@ -22,6 +22,7 @@ public class clickraycaster : MonoBehaviour {
             {
 				if(hit.collider.gameObject.tag == "Piece")
 				{
+					Debug.Log ("Clicked a Piece!");
 					if(gameboard.currentPiece != null)
 					{
 						if(((Piece)hit.collider.gameObject.GetComponent("Piece")).getAllegiance() == gameboard.getAllegiance())
@@ -33,6 +34,7 @@ public class clickraycaster : MonoBehaviour {
 							else
 							{
 								//select new piece
+								gameboard.currentPiece = (Piece)hit.collider.gameObject.GetComponent("Piece");
 								list = ((Piece)hit.collider.gameObject.GetComponent("Piece")).canMoveList();
 								gameboard.makeTileField (list);
 							}
@@ -57,6 +59,7 @@ public class clickraycaster : MonoBehaviour {
 						if(hit.collider.gameObject != gameboard.currentPiece)
 						{
 							//you've seleced a piece
+							gameboard.currentPiece = (Piece)hit.collider.gameObject.GetComponent("Piece");
 							list = ((Piece)hit.collider.gameObject.GetComponent("Piece")).canMoveList();
 							gameboard.makeTileField (list);
 						}

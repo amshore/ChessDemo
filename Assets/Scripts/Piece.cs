@@ -78,16 +78,7 @@ abstract public class Piece : MonoBehaviour {
 	void Start () {
         gameBoard = Board.Instance;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        //Debug.Log("Piece existing is being Updated!");
-        if (Input.GetMouseButtonDown(0))
-        {
-            notClicked = !notClicked;
-            Debug.Log("User clicked piece");
-        }
-	}
+
 
     //returns hasMoved, which returns if the piece has moved from its initial location this game
     public bool getHasMoved()
