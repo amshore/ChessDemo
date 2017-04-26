@@ -145,4 +145,10 @@ public class Pawn : Piece {
             hasMoved = true;
         }
     }
+
+	public override void moveObjectLoc(Point pt)
+	{
+		loc = pt;
+		gameObject.transform.position = new Vector3(pt.turnToWorld()[0], .5f, pt.turnToWorld()[1]);
+	}
 }

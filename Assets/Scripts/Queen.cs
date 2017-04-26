@@ -155,4 +155,10 @@ public class Queen : Piece {
         }
         return mt;
     }
+
+	public override void moveObjectLoc(Point pt)
+	{
+		loc = pt;
+		gameObject.transform.position = new Vector3(pt.turnToWorld()[0], .65f, pt.turnToWorld()[1]);
+	}
 }

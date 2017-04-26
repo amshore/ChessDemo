@@ -95,10 +95,10 @@ abstract public class Piece : MonoBehaviour {
         return hasMoved;
     }
 
-    public void moveObjectLoc(Point pt)
+    public virtual void moveObjectLoc(Point pt)
     {
         loc = pt;
-        gameObject.transform.position = new Vector3(pt.turnToWorld()[0], 1f, pt.turnToWorld()[1]);
+		gameObject.transform.position = new Vector3(pt.turnToWorld()[0], 1f, pt.turnToWorld()[1]);
     }
 
     //Calculates an array of points piece can legally move to
