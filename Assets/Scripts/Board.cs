@@ -76,7 +76,8 @@ public class Board : Singleton<Board>
         firstHistory = null;
         lastHistory = null;
         enPassant = null;
-        StartCoroutine("runEasyAI");
+//		StartCoroutine ("runEasyAI"); //AI vs AI
+        
     }
 
     // Update is called once per frame
@@ -87,19 +88,20 @@ public class Board : Singleton<Board>
         {
             piecesUpdated = false;
             gameActive = isCheckmate();
-            switch (ai)
-            {
-                case AIE.NONE:
-                    break;
-                case AIE.EASY:
-                    StartCoroutine("runEasyAI");
-                    break;
-                case AIE.NORMAL:
-                    runNormalAI();
-                    break;
-                default:
-                    break;
-
+			if(turn == 1)
+			{
+				switch (ai) {
+				case AIE.NONE:
+					break;
+				case AIE.EASY:
+					StartCoroutine ("runEasyAI");
+					break;
+				case AIE.NORMAL:
+					runNormalAI ();
+					break;
+				default:
+					break;
+				}
             }
         }
         //During Milestone 2, there will be tiles once we integrate the graphics with this code
@@ -211,7 +213,7 @@ public class Board : Singleton<Board>
         piecesUpdated = true;
         placePieceAt(pieceAt(p1), p2);
         boardPieces[p1.getX(), p1.getY()] = null;
-        //destroyTileField();
+        destroyTileField();
     }
 
     //Calls tryToMove for the piece at p1 to move to p2
@@ -418,14 +420,21 @@ public class Board : Singleton<Board>
 
     public void makeTileField(List<Point> pointList)
     {
-        destroyTileField();
+      	destroyTileField();
         foreach(Point p in pointList)
         {
-            tileList.Add(Instantiate(tilePrefab, new Vector3(p.turnToWorld()[0], 0.52f, p.turnToWorld()[1]), Quaternion.identity));
+			Debug.Log ("Making tile...");
+			Debug.Log ("Tile's point values: " + p.getX() + " and " + p.getY());
+			GameObject dummy = Instantiate (tilePrefab, new Vector3 (p.turnToWorld () [0], 0.52f, p.turnToWorld () [1]), Quaternion.identity);
+			tileList.Add (dummy);
+			((tilescript)dummy.GetComponent("tilescript")).setLoc (p);
+//			tileList.Add(Instantiate(tilePrefab, new Vector3(p.turnToWorld()[0], 0.52f, p.turnToWorld()[1]), Quaternion.identity));
+
+			Debug.Log ("Tile Instantiation complete");
         }
     }
 
-    public void destroyTileField()
+   	public void destroyTileField()
     {
         foreach(GameObject tile in tileList)
         {
