@@ -20,7 +20,7 @@ public class King : Piece {
         for (int i = -1; i <= 1; i++)
             for (int j = -1; j <= 1; j++)
             {
-                Point pt = new Point(i, j);
+                Point pt = new Point(loc.getX() + i, loc.getY() + j);
                 if (canMove(pt) != MoveTypesE.ILLEGAL)
                     retMoveList.Add(pt);
             }
@@ -72,33 +72,51 @@ public class King : Piece {
 
         if(!hasMoved && System.Math.Abs(dy) == 2 && dx == 0)
         {
+            Debug.Log("Seeing if can castle");
             if (gameBoard.inCheck(loc))
                 return MoveTypesE.ILLEGAL;
             if(dy > 0)
             {
-                for(int i = loc.getY(); i < 7; i++)
+                for(int i = loc.getY()+1; i < 7; i++)
                 {
-                    if (gameBoard.pieceAt(i, loc.getY()) != null)
+                    if (gameBoard.pieceAt(loc.getX(), i) != null)
+                    {
+                        Debug.Log("Piece in the way");
                         return MoveTypesE.ILLEGAL;
+                    }
                 }
                 GameObject rookMaybe = gameBoard.pieceAt(loc.getX(), 7);
                 if (rookMaybe == null || ((Piece)rookMaybe.GetComponent("Piece")).getHasMoved())
+                {
+                    Debug.Log("Rook Has Moved");
                     return MoveTypesE.ILLEGAL;
+                }
                 if (!gameBoard.inCheck(gameObject, rookMaybe, loc.getX(), loc.getY() + 1) && !gameBoard.inCheck(gameObject, rookMaybe, loc.getX(), loc.getY() + 2))
+                {
+                    Debug.Log("In Check On Way");
                     return MoveTypesE.ILLEGAL;
+                }
             }
             else
             {
-                for (int i = loc.getY(); i > 0; i--)
+                for (int i = loc.getY()-1; i > 0; i--)
                 {
-                    if (gameBoard.pieceAt(i, loc.getY()) != null)
+                    if (gameBoard.pieceAt(loc.getX(), i) != null)
+                    {
                         return MoveTypesE.ILLEGAL;
+                    }
                 }
                 GameObject rookMaybe = gameBoard.pieceAt(loc.getX(), 0);
                 if (rookMaybe == null || ((Piece)rookMaybe.GetComponent("Piece")).getHasMoved())
+                {
+                    Debug.Log("Rook Has Moved");
                     return MoveTypesE.ILLEGAL;
+                }
                 if (!gameBoard.inCheck(gameObject, rookMaybe, loc.getX(), loc.getY() - 1) && !gameBoard.inCheck(gameObject, rookMaybe, loc.getX(), loc.getY() - 2))
+                {
+                    Debug.Log("In Check On Way");
                     return MoveTypesE.ILLEGAL;
+                }
             }
             return MoveTypesE.CASTLE;
         }
