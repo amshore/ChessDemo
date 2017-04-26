@@ -49,7 +49,7 @@ public class Board : Singleton<Board>
     public GameObject whiteKing;
     public GameObject blackKing;
     public GameObject tilePrefab;
-	public GameObject currentPiece;
+	public Piece currentPiece = null;
 
     private void Awake()
     {
@@ -389,7 +389,7 @@ public class Board : Singleton<Board>
         aIUpdated = true;
     }
 
-    private void makeTileField(List<Point> pointList)
+    public void makeTileField(List<Point> pointList)
     {
         destroyTileField();
         foreach(Point p in pointList)
@@ -398,11 +398,16 @@ public class Board : Singleton<Board>
         }
     }
 
-    private void destroyTileField()
+    public void destroyTileField()
     {
         foreach(GameObject tile in tileList)
         {
             Destroy(tile);
         }
     }
+
+	public int getAllegiance()
+	{
+		return turn;
+	}
 }
