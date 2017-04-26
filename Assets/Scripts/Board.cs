@@ -265,11 +265,125 @@ public class Board : Singleton<Board>
     //Tests if any enemy piece can move to the current space (where the king is)
     public bool inCheck(Point p)
     {
-        for(int i = 0; i < 7; i++)
+        /*for(int i = 0; i < 7; i++)
             for(int j = 0; j < 7; j++)
                 if(boardPieces[i,j] != null && ((Piece)boardPieces[i,j].GetComponent("Piece")).getAllegiance() != turn)
                     if (((Piece)boardPieces[i, j].GetComponent("Piece")).canMove(p) != Piece.MoveTypesE.ILLEGAL)
-                        return true;
+                        return true;*/
+		for (int i = p.getX() + 1; i < 7; i++) {
+			int j = p.getY () + (i- p.getX());
+			if (boardPieces [i, j] != null && ((Piece)boardPieces [i, j].GetComponent ("Piece")).getAllegiance () != turn) {
+				if (boardPieces [i, j] == Queen || boardPieces [i,j] == Bishop) {
+						return true;
+				}
+				if((i == p.getX() + 1) && (j == p.getY() + 1) && boardPieces [i,j] == Pawn){
+					return true;
+				}
+			}
+		}
+
+		for (int i = p.getX()+ 1; i < 7; i++) {
+			int j = p.getY () - (i- p.getX());
+			if (boardPieces [i, j] != null && ((Piece)boardPieces [i, j].GetComponent ("Piece")).getAllegiance () != turn) {
+				if (boardPieces [i, j] == Queen || boardPieces [i,j] == Bishop) {
+					return true;
+				}
+				if((i == p.getX() + 1) && (j == p.getY() - 1) && boardPieces [i,j] == Pawn){
+					return true;
+				}
+			}
+		}
+
+		for (int i = p.getX() - 1; i > 0; i--) {
+			int j = p.getY () + (i- p.getX());
+			if (boardPieces [i, j] != null && ((Piece)boardPieces [i, j].GetComponent ("Piece")).getAllegiance () != turn) {
+				if (boardPieces [i, j] == Queen || boardPieces [i,j] == Bishop) {
+					return true;
+				}
+				if((i == p.getX() - 1) && (j == p.getY() + 1) && boardPieces [i,j] == Pawn){
+					return true;
+				}
+			}
+		}
+
+		for (int i = p.getX() - 1; i > 0; i--) {
+			int j = p.getY () - (i- p.getX());
+			if (boardPieces [i, j] != null && ((Piece)boardPieces [i, j].GetComponent ("Piece")).getAllegiance () != turn) {
+				if (boardPieces [i, j] == Queen || boardPieces [i,j] == Bishop) {
+					return true;
+				}
+				if((i == p.getX() - 1) && (j == p.getY() - 1) && boardPieces [i,j] == Pawn){
+					return true;
+				}
+			}
+		}
+
+		for (int i = p.getX() + 1; i < 7; i++) {
+			int j = p.getY ();
+			if (boardPieces [i, j] != null && ((Piece)boardPieces [i, j].GetComponent ("Piece")).getAllegiance () != turn) {
+				if (boardPieces [i, j] == Queen || boardPieces [i,j] == Rook) {
+					return true;
+				}
+			}
+		}
+
+		for (int i = p.getX() - 1; i > 0; i--) {
+			int j = p.getY ();
+			if (boardPieces [i, j] != null && ((Piece)boardPieces [i, j].GetComponent ("Piece")).getAllegiance () != turn) {
+				if (boardPieces [i, j] == Queen || boardPieces [i,j] == Rook) {
+					return true;
+				}
+			}
+		}
+
+		for (int j = p.getY() + 1; j < 7; j++) {
+			int i = p.getX ();
+			if (boardPieces [i, j] != null && ((Piece)boardPieces [i, j].GetComponent ("Piece")).getAllegiance () != turn) {
+				if (boardPieces [i, j] == Queen || boardPieces [i,j] == Rook) {
+					return true;
+				}
+			}
+		}
+
+		for (int j = p.getY() - 1; j > 0; j--) {
+			int i = p.getX ();
+			if (boardPieces [i, j] != null && ((Piece)boardPieces [i, j].GetComponent ("Piece")).getAllegiance () != turn) {
+				if (boardPieces [i, j] == Queen || boardPieces [i,j] == Rook) {
+					return true;
+				}
+			}
+		}
+
+		int m = p.getX();
+		int n = p.getY();
+
+		if(Board[m+2,n+1] == Knight){
+			return true;
+		}
+		if(Board[m+2,n-1] == Knight){
+			return true;
+		}
+		if(Board[m-2,n+1] == Knight){
+			return true;
+		}
+		if(Board[m-2,n-1] == Knight){
+			return true;
+		}
+		if(Board[m+2,n+1] == Knight){
+			return true;
+		}
+		if(Board[m+1,n+2] == Knight){
+			return true;
+		}
+		if(Board[m+1,n-2] == Knight){
+			return true;
+		}
+		if(Board[m-1,n+2] == Knight){
+			return true;
+		}
+		if(Board[m-1,n-2] == Knight){
+			return true;
+		}
         return false;
     }
 
