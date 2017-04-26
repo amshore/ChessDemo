@@ -228,7 +228,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 533737700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.93, y: 5.92, z: -0.54}
+  m_LocalPosition: {x: -19.3, y: 53.7, z: -0.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 114125719}
@@ -243,7 +243,7 @@ TextMesh:
   m_GameObject: {fileID: 533737700}
   m_Text: Chess Vision
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -314,7 +314,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 713223334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.28, y: -2.05, z: 0}
+  m_LocalPosition: {x: -13.3, y: -8.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 114125719}
@@ -329,7 +329,7 @@ TextMesh:
   m_GameObject: {fileID: 713223334}
   m_Text: Multiplayer
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 4
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -409,6 +409,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSinglePlayer: 0
   isMultiPlayer: 1
+  isEasy: 0
+  isMedium: 0
+  isHard: 0
+  isBack: 0
 --- !u!1 &828080602
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +440,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 828080602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.93, y: 0.44, z: 0}
+  m_LocalPosition: {x: -15.5, y: 12.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 114125719}
@@ -451,7 +455,7 @@ TextMesh:
   m_GameObject: {fileID: 828080602}
   m_Text: Singleplayer
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 4
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -531,6 +535,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSinglePlayer: 1
   isMultiPlayer: 0
+  isEasy: 0
+  isMedium: 0
+  isHard: 0
+  isBack: 0
 --- !u!1 &985877637
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,7 +622,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 985877637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -22.68}
+  m_LocalPosition: {x: 0, y: 1, z: -133.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -699,7 +707,7 @@ Transform:
   m_GameObject: {fileID: 2051817488}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.25091, y: 1.91, z: -0.33}
-  m_LocalScale: {x: 5.546105, y: 2.9658377, z: 2.9658377}
+  m_LocalScale: {x: 30.019896, y: 16.05345, z: 16.05345}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
