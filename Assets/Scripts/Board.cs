@@ -49,6 +49,7 @@ public class Board : Singleton<Board>
     public GameObject whiteKing;
     public GameObject blackKing;
     public GameObject tilePrefab;
+	public GameObject currentPiece;
 
     private void Awake()
     {

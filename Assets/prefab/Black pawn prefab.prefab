@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 65190952201637168}
   m_Layer: 0
   m_Name: Black pawn prefab
-  m_TagString: Untagged
+  m_TagString: Board
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -355,7 +355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027413952f7c149ff91a7e591020b785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allegiance: 1
   Whiteprefab: {fileID: 1830649645806748, guid: 98e035fe179cd4ca7be1d2b56eabd578,
     type: 2}
   Blackprefab: {fileID: 1984254949113868}

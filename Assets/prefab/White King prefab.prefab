@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 65545554913174356}
   m_Layer: 0
   m_Name: White King prefab
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,7 +326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7dae431ad1a4fcebf697289b729ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allegiance: 0
   Whiteprefab: {fileID: 1665686354190118}
   Blackprefab: {fileID: 1680858153906462, guid: de0c040971dd647888d5fdd060980df6,
     type: 2}

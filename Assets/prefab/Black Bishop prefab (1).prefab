@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 65049803724782612}
   m_Layer: 0
   m_Name: Black Bishop prefab (1)
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,7 +268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e123f00ed72443780abc6f879335b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allegiance: 1
   Whiteprefab: {fileID: 1614716262206040, guid: 07eb52dcc45ba4d4e94fcbab9171b724,
     type: 2}
   Blackprefab: {fileID: 1937862726738884}
