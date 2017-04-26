@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
@@ -10,10 +11,11 @@ public class MainMenu : MonoBehaviour {
 	public bool isMedium;
 	public bool isHard;
 	public bool isBack;
+	public bool isPuzzle;
 
 	void OnMouseUp(){
 		if (isSinglePlayer) {
-			Application.LoadLevel (1);
+			SceneManager.LoadScene("mainMenuAISelection", LoadSceneMode.Single);
 			GetComponent<Renderer> ().material.color = Color.cyan;
 		}
 		if (isMultiPlayer) {
@@ -21,21 +23,24 @@ public class MainMenu : MonoBehaviour {
 			GetComponent<Renderer> ().material.color = Color.cyan;
 		}
 		if (isEasy) {
-			Application.LoadLevel (2);
+			SceneManager.LoadScene("mainGameAIEasy", LoadSceneMode.Single);
 			GetComponent<Renderer> ().material.color = Color.cyan;
 		}
 		if (isMedium) {
-			Application.LoadLevel (3);
+			SceneManager.LoadScene("mainGameAIMedium", LoadSceneMode.Single);
 			GetComponent<Renderer> ().material.color = Color.cyan;
 		}
 		if (isHard) {
-			Application.LoadLevel (4);
+			SceneManager.LoadScene("mainGameAIMedium", LoadSceneMode.Single);
 			GetComponent<Renderer> ().material.color = Color.cyan;
 		}
 		if (isBack) {
-			Application.LoadLevel (0);
+			SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
 			GetComponent<Renderer> ().material.color = Color.cyan;
 		}
-	
+		if (isPuzzle) {
+			SceneManager.LoadScene ("puzzlesSelectedScene", LoadSceneMode.Single);
+			GetComponent<Renderer> ().material.color = Color.cyan;
+		}
 	}
 }

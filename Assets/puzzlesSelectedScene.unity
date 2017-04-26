@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44659364, g: 0.4964301, b: 0.5748256, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -338,9 +338,7 @@ MonoBehaviour:
   isMedium: 0
   isHard: 0
   isBack: 1
-  isPuzzles: 0
-  isPuzzle1: 0
-  isPuzzle2: 0
+  isPuzzle: 0
 --- !u!114 &682376104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,8 +360,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.3, y: 1.4523438, z: 0}
-  m_Center: {x: 3.15, y: -0.7261719, z: 0}
+  m_Size: {x: 26, y: 16, z: 0}
+  m_Center: {x: 3.15, y: -1, z: 0}
 --- !u!102 &682376106
 TextMesh:
   serializedVersion: 3
@@ -524,8 +522,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.3, y: 1.4523438, z: 0}
-  m_Center: {x: 3.15, y: -0.7261719, z: 0}
+  m_Size: {x: 24, y: 10, z: 0}
+  m_Center: {x: 7.5, y: -2.5, z: 0}
 --- !u!114 &713223340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,16 +532,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 713223334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b29ec22978c240f184a130c799c46f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 610f4b8a25d6ec842a3587b6e7720e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSinglePlayer: 0
-  isMultiPlayer: 0
-  isEasy: 0
-  isMedium: 0
-  isHard: 0
-  isBack: 0
-  isPuzzles: 1
   isPuzzle1: 0
   isPuzzle2: 1
 --- !u!1 &828080602
@@ -653,8 +644,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.1, y: 1.4523438, z: 0}
-  m_Center: {x: 3.55, y: -0.7261719, z: 0}
+  m_Size: {x: 24, y: 10, z: 0}
+  m_Center: {x: 7.5, y: -2, z: 0}
 --- !u!114 &828080608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,16 +654,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 828080602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b29ec22978c240f184a130c799c46f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 610f4b8a25d6ec842a3587b6e7720e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSinglePlayer: 0
-  isMultiPlayer: 0
-  isEasy: 0
-  isMedium: 0
-  isHard: 0
-  isBack: 0
-  isPuzzles: 1
   isPuzzle1: 1
   isPuzzle2: 0
 --- !u!1 &985877637
