@@ -333,14 +333,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b29ec22978c240f184a130c799c46f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSinglePlayer: 1
+  isSinglePlayer: 0
   isMultiPlayer: 0
   isEasy: 0
   isMedium: 0
   isHard: 0
   isBack: 1
-  isPuzzles: 0
-  isPuzzle1: 0
+  isPuzzles: 1
+  isPuzzle1: 1
   isPuzzle2: 0
 --- !u!114 &682376104
 MonoBehaviour:
@@ -538,14 +538,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b29ec22978c240f184a130c799c46f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSinglePlayer: 1
+  isSinglePlayer: 0
   isMultiPlayer: 0
   isEasy: 0
   isMedium: 1
   isHard: 0
   isBack: 0
-  isPuzzles: 0
-  isPuzzle1: 0
+  isPuzzles: 1
+  isPuzzle1: 1
   isPuzzle2: 0
 --- !u!1 &828080602
 GameObject:
@@ -667,14 +667,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b29ec22978c240f184a130c799c46f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSinglePlayer: 1
+  isSinglePlayer: 0
   isMultiPlayer: 0
   isEasy: 1
   isMedium: 0
   isHard: 0
   isBack: 0
-  isPuzzles: 0
-  isPuzzle1: 0
+  isPuzzles: 1
+  isPuzzle1: 1
   isPuzzle2: 0
 --- !u!1 &985877637
 GameObject:
@@ -809,14 +809,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b29ec22978c240f184a130c799c46f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSinglePlayer: 1
+  isSinglePlayer: 0
   isMultiPlayer: 0
   isEasy: 0
   isMedium: 0
   isHard: 1
   isBack: 0
-  isPuzzles: 0
-  isPuzzle1: 0
+  isPuzzles: 1
+  isPuzzle1: 1
   isPuzzle2: 0
 --- !u!114 &1019201476
 MonoBehaviour:
