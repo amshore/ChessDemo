@@ -31,9 +31,10 @@ public class MainMenu : MonoBehaviour {
 			if (isBack) {
 				Application.LoadLevel (0);
 				GetComponent<Renderer> ().material.color = Color.cyan;
+			} else { 
+				Application.LoadLevel (1);
+				GetComponent<Renderer> ().material.color = Color.cyan;
 			}
-			Application.LoadLevel (1);
-			GetComponent<Renderer> ().material.color = Color.cyan;
 		}
 		if (isMultiPlayer) {
 			Application.Quit ();
@@ -41,39 +42,42 @@ public class MainMenu : MonoBehaviour {
 		}
 		if (isPuzzles) {
 			if (isPuzzle1) {
-				if (isEasy && (isPuzzle1 || isPuzzle2)){
+				if (isEasy && (isPuzzle1)){
 					Application.LoadLevel (8);
 					GetComponent<Renderer> ().material.color = Color.cyan;
 				}
-				if (isMedium && (isPuzzle1 || isPuzzle2) ) {
+				if (isMedium && (isPuzzle1 )) {
 					Application.LoadLevel (9);
 					GetComponent<Renderer> ().material.color = Color.cyan;
 				}
-				if (isHard && (isPuzzle1 || isPuzzle2) ) {
+				if (isHard && (isPuzzle1)) {
 					Application.LoadLevel (10);
 					GetComponent<Renderer> ().material.color = Color.cyan;
+				} else { 
+					Application.LoadLevel (6);
+					GetComponent<Renderer> ().material.color = Color.cyan;
 				}
-				Application.LoadLevel (6);
-				GetComponent<Renderer> ().material.color = Color.cyan;
 			}
 			if (isPuzzle2) {
-				if (isEasy && (isPuzzle1 || isPuzzle2)){
-					Application.LoadLevel (8);
+				if (isEasy && (isPuzzle2)) {
+					Application.LoadLevel (11);
 					GetComponent<Renderer> ().material.color = Color.cyan;
 				}
-				if (isMedium && (isPuzzle1 || isPuzzle2) ) {
-					Application.LoadLevel (9);
+				if (isMedium && (isPuzzle2)) {
+					Application.LoadLevel (12);
 					GetComponent<Renderer> ().material.color = Color.cyan;
 				}
-				if (isHard && (isPuzzle1 || isPuzzle2) ) {
-					Application.LoadLevel (10);
+				if (isHard && (isPuzzle2)) {
+					Application.LoadLevel (13);
+					GetComponent<Renderer> ().material.color = Color.cyan;
+				} else {
+					Application.LoadLevel (7);
 					GetComponent<Renderer> ().material.color = Color.cyan;
 				}
-				Application.LoadLevel (7);
+			} else {
+				Application.LoadLevel (2);
 				GetComponent<Renderer> ().material.color = Color.cyan;
 			}
-			Application.LoadLevel (2);
-			GetComponent<Renderer> ().material.color = Color.cyan;
 		}
 	}
 }

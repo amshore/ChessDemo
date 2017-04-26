@@ -5,5 +5,51 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/basictest1.unity
+    guid: fb89736733207a341ba38e645a40253f
+  - enabled: 1
+    path: Assets/MainMenu.unity
+    guid: a0ca1ebbc08de4c6fb15452c484d46c7
+  - enabled: 1
+    path: Assets/mainMenuAISelection.unity
+    guid: 60315a229e3c044328e0004366344191
+  - enabled: 1
+    path: Assets/puzzlesSelectedScene.unity
+    guid: 6ec64bafe93a248a8b502482a5b49c00
+  - enabled: 1
+    path: Assets/mainGameAIEasy.unity
+    guid: 74dbca688e5c843f499182db4827715a
+  - enabled: 1
+    path: Assets/mainGameAIMedium.unity
+    guid: f5e17cfc1cf0d43a1b3386262ef3f331
+  - enabled: 1
+    path: Assets/MainGameAIHard.unity
+    guid: 6b58cf6f1cae3448ab0f001f19a8e0b5
+  - enabled: 1
+    path: Assets/Puzzle1MenuAISelectionScene.unity
+    guid: 270101bb568684a3e898cb8ce5c661e2
+  - enabled: 1
+    path: Assets/Puzzle2MenuAISelectionScene.unity
+    guid: 6452e6223be424665bb3ab2cab14a087
+  - enabled: 1
+    path: Assets/Puzzle1AIEasy.unity
+    guid: 86ff500631f8041e0ad108a812c3c6b7
+  - enabled: 1
+    path: Assets/Puzzle1AIMedium.unity
+    guid: bb1def3439baa4cd19d37178bc0a0a24
+  - enabled: 1
+    path: Assets/Puzzle1AIHard.unity
+    guid: 8744dbaccd12542b1838fa417130c56c
+  - enabled: 1
+    path: Assets/Puzzle2AIEasy.unity
+    guid: 7216c6320e23d4475ab1972b12afe0c4
+  - enabled: 1
+    path: Assets/Puzzle2AIMedium.unity
+    guid: 27ecd03d8716f40acb6c9b78455f7301
+  - enabled: 1
+    path: Assets/Puzzle2AIHard.unity
+    guid: 328ea1b9325744a13ae749b291e1f829
+  - enabled: 0
+    path: Assets/PuzzleMenuAISelectionScene.unity
+    guid: 551d79d9ab2b6438bbb168096e1ed070
