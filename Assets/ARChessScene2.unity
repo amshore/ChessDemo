@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44659364, g: 0.4964301, b: 0.5748256, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -208,9 +208,9 @@ MonoBehaviour:
   blackPawn: {fileID: 1984254949113868, guid: 158bb607e0d52468ea1123acc6054817, type: 2}
   whiteRook: {fileID: 1559312313010798, guid: a0bd12f9a71904917b8e3aef81928452, type: 2}
   blackRook: {fileID: 1594495824136864, guid: fbef3565352794212ac37cb4cdd24674, type: 2}
-  whiteKnight: {fileID: 1738728039111726, guid: a1e2e997e10f04609b7129f9bb84f83e,
+  whiteKnight: {fileID: 1732734019337630, guid: 105cc73ae754f45e9a6c658bed13fefe,
     type: 2}
-  blackKnight: {fileID: 1178951763100042, guid: 8066652c81ee441299139749cfc7c038,
+  blackKnight: {fileID: 1432599630973570, guid: abba796587dfb49dabd5d0ecaf535876,
     type: 2}
   whiteBishop: {fileID: 1614716262206040, guid: 07eb52dcc45ba4d4e94fcbab9171b724,
     type: 2}

@@ -137,7 +137,7 @@ public class Board : Singleton<Board>
 		}
 
 		else if (piece == Piece.PieceTypeE.KNIGHT) {
-			go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.75f, p.turnToWorld()[1]), Quaternion.identity);
+			go = Instantiate(prefab, new Vector3(p.turnToWorld()[0], 0.55f, p.turnToWorld()[1]), Quaternion.identity);
 			((Piece)go.GetComponent(str)).initialize((int)player, p, this, piece);
 		}
 
@@ -151,6 +151,8 @@ public class Board : Singleton<Board>
 		}
         if (piece == Piece.PieceTypeE.KING)
             go.transform.localScale = new Vector3(2f, 2f, 2f);
+		else if (piece == Piece.PieceTypeE.KNIGHT)
+			go.transform.localScale = new Vector3(3f, 3f, 3f);
         else
             go.transform.localScale = new Vector3(4f, 4f, 4f);
         boardPieces[p.getX(), p.getY()] = go;
