@@ -6,7 +6,7 @@ abstract public class Piece : MonoBehaviour {
     public enum PieceColor
     {
         WHITE,
-
+        BLACK
     }
 
     public enum MoveTypesE
@@ -32,12 +32,37 @@ abstract public class Piece : MonoBehaviour {
 
     public enum PieceWeightsE: int
     {
-        PAWNWEIGHT = 1,
-        ROOKWEIGHT = 1,
-        KNIGHTWEIGHT = 1,
-        BISHOPWEIGHT = 1,
+        PAWNWEIGHT = 10,
+        ROOKWEIGHT = 50,
+        KNIGHTWEIGHT = 30,
+        BISHOPWEIGHT = 30,
         KINGWEIGHT = 1,
-        QUEENWEIGHT = 1
+        QUEENWEIGHT = 90,
+        PAWNCAPUTURE = 50,
+        BISHOPCAPUTURE = 250,
+        KNIGHTCAPUTURE = 200,
+        ROOKCAPUTURE = 250,
+        QUEENCAPUTURE = 500,
+        KINGCAPUTURE = 100000
+    };
+
+    public enum ScoreWeightsE: int
+    {
+        MOBILITY = 10,
+        ENPASSANT = 20,
+        DOUBLESTEP = 5,
+        PROMOTE = 1000,
+        PAWNX = 1,
+        PAWNY = 2,
+        ROOKX = 2,
+        ROOKY = 2,
+        BISHOPX = 1,
+        BISHOPY = 1,
+        QUEENY = 2,
+        QUEENX = 4,
+        CASTLE = 150,
+        KINGX = 1,
+        KINGY = 1,
     };
 
     protected bool hasMoved = false;
@@ -61,7 +86,7 @@ abstract public class Piece : MonoBehaviour {
         loc = p;
         gameBoard = b;
         type = t;
-        Debug.Log("piece Created at (x,y): (" + p.getX() + ", " + p.getY() + ")");
+        //Debug.Log("piece Created at (x,y): (" + p.getX() + ", " + p.getY() + ")");
     }
 
     //Constructor with color, location, and a reference to the board
@@ -71,7 +96,7 @@ abstract public class Piece : MonoBehaviour {
         loc = p;
         gameBoard = b;
         type = t;
-		Debug.Log ("piece Created " + p.getX() + ", " + p.getY());
+		//Debug.Log ("piece Created " + p.getX() + ", " + p.getY());
     }
 
 	// Use this for initialization
@@ -99,6 +124,11 @@ abstract public class Piece : MonoBehaviour {
         return null;
     }
 
+    public virtual List<Vector3> canMoveEval()
+    {
+        return null;
+    }
+
     //The default canMove function, should always be overwritten
     //This is called for each subpiece and determines if:
     // (a) The piece is moved into the board (ILLEGAL if outside the board)
@@ -111,10 +141,10 @@ abstract public class Piece : MonoBehaviour {
             return MoveTypesE.ILLEGAL;
         if((p.getX() >= 0) && (p.getX() <= 7) && (p.getY() >= 0) && (p.getY() <= 7))
         {
-            /*if (gameBoard.inCheck(loc, p))
+            if (gameBoard.inCheck(loc, p))
             {
                 return MoveTypesE.ILLEGAL;
-            }*/
+            }
             if (gameBoard.pieceAt(p) == null)
             {
                 return MoveTypesE.NORMAL;
@@ -124,6 +154,8 @@ abstract public class Piece : MonoBehaviour {
         }
         return MoveTypesE.ILLEGAL;
     }
+
+
 
     //The default tryToMove function, and only should be overwritten if piece has special rules
     // Pawn: ENPASSANT, DOUBLESTEP, PROMOTE

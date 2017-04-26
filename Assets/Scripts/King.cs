@@ -13,6 +13,51 @@ public class King : Piece {
 
     }
 
+    public override List<Vector3> canMoveEval()
+    {
+        List<Vector3> scores = new List<Vector3>();
+        List<Point> pts = canMoveList();
+        
+        foreach (Point point in pts)
+        {
+            int basenum = pts.Count * (int)ScoreWeightsE.MOBILITY + (int)PieceWeightsE.KINGWEIGHT;
+            basenum = basenum + ((getAllegiance() == 0) ? (7 - point.getY()) : (point.getY())) * (int)ScoreWeightsE.KINGX + System.Math.Abs(point.getY() - 4)*(int)ScoreWeightsE.KINGY;
+            if (gameBoard.pieceAt(point) != null)
+            {
+                switch ((((Piece)gameBoard.pieceAt(point).GetComponent("Piece")).getType()))
+                {
+                    case (PieceTypeE.PAWN):
+                        basenum = basenum + (int)PieceWeightsE.PAWNCAPUTURE;
+                        break;
+                    case (PieceTypeE.BISHOP):
+                        basenum = basenum + (int)PieceWeightsE.BISHOPCAPUTURE;
+                        break;
+                    case (PieceTypeE.KNIGHT):
+                        basenum = basenum + (int)PieceWeightsE.KNIGHTCAPUTURE;
+                        break;
+                    case (PieceTypeE.ROOK):
+                        basenum = basenum + (int)PieceWeightsE.ROOKCAPUTURE;
+                        break;
+                    case (PieceTypeE.QUEEN):
+                        basenum = basenum + (int)PieceWeightsE.QUEENCAPUTURE;
+                        break;
+                    case (PieceTypeE.KING):
+                        basenum = basenum + (int)PieceWeightsE.KINGCAPUTURE;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if(System.Math.Abs(loc.getY() - point.getY()) == 2)
+            {
+                basenum = basenum + (int)ScoreWeightsE.CASTLE;
+            }
+            Debug.Log("King at (" + loc.getX() + ", " + loc.getY() + ") can move to (" + point.getX() + ", " + point.getY() + ")  with weight " + basenum);
+            scores.Add(new Vector3(point.getX(), point.getY(), basenum));
+        }
+        return scores;
+    }
+
     //Calculates all spaces in box around piece to see if legal
     public override List<Point> canMoveList()
     {
@@ -34,13 +79,13 @@ public class King : Piece {
                 retMoveList.Add(pt1);
         }
 
-        Debug.Log("King at (" + loc.getX() + ", " + loc.getY() + ") can move to: ");
+        /*Debug.Log("King at (" + loc.getX() + ", " + loc.getY() + ") can move to: ");
         foreach (Point p in retMoveList)
         {
             Debug.Log("(" + p.getX() + ", " + p.getY() + ")");
         }
         if (retMoveList.Count == 0)
-            Debug.Log("No Possible Moves");
+            Debug.Log("No Possible Moves");*/
 
         return retMoveList;
     }
@@ -72,7 +117,7 @@ public class King : Piece {
 
         if(!hasMoved && System.Math.Abs(dy) == 2 && dx == 0)
         {
-            Debug.Log("Seeing if can castle");
+            //Debug.Log("Seeing if can castle");
             if (gameBoard.inCheck(loc))
                 return MoveTypesE.ILLEGAL;
             if(dy > 0)
@@ -81,19 +126,19 @@ public class King : Piece {
                 {
                     if (gameBoard.pieceAt(loc.getX(), i) != null)
                     {
-                        Debug.Log("Piece in the way");
+                        //Debug.Log("Piece in the way");
                         return MoveTypesE.ILLEGAL;
                     }
                 }
                 GameObject rookMaybe = gameBoard.pieceAt(loc.getX(), 7);
                 if (rookMaybe == null || ((Piece)rookMaybe.GetComponent("Piece")).getHasMoved())
                 {
-                    Debug.Log("Rook Has Moved");
+                    //Debug.Log("Rook Has Moved");
                     return MoveTypesE.ILLEGAL;
                 }
-                if (!gameBoard.inCheck(gameObject, rookMaybe, loc.getX(), loc.getY() + 1) && !gameBoard.inCheck(gameObject, rookMaybe, loc.getX(), loc.getY() + 2))
+                if (gameBoard.inCheck(gameObject, rookMaybe, loc.getX(), loc.getY() + 1) || gameBoard.inCheck(gameObject, rookMaybe, loc.getX(), loc.getY() + 2))
                 {
-                    Debug.Log("In Check On Way");
+                    //Debug.Log("In Check On Way");
                     return MoveTypesE.ILLEGAL;
                 }
             }
@@ -109,12 +154,12 @@ public class King : Piece {
                 GameObject rookMaybe = gameBoard.pieceAt(loc.getX(), 0);
                 if (rookMaybe == null || ((Piece)rookMaybe.GetComponent("Piece")).getHasMoved())
                 {
-                    Debug.Log("Rook Has Moved");
+                   // Debug.Log("Rook Has Moved");
                     return MoveTypesE.ILLEGAL;
                 }
-                if (!gameBoard.inCheck(gameObject, rookMaybe, loc.getX(), loc.getY() - 1) && !gameBoard.inCheck(gameObject, rookMaybe, loc.getX(), loc.getY() - 2))
+                if (gameBoard.inCheck(gameObject, rookMaybe, loc.getX(), loc.getY() - 1) || gameBoard.inCheck(gameObject, rookMaybe, loc.getX(), loc.getY() - 2))
                 {
-                    Debug.Log("In Check On Way");
+                   // Debug.Log("In Check On Way");
                     return MoveTypesE.ILLEGAL;
                 }
             }
@@ -136,15 +181,16 @@ public class King : Piece {
             if (mt == MoveTypesE.CASTLE)
             {
                 Point tmploc = loc;
-                gameBoard.Move(loc, p);
-                if (loc.getX() > p.getX())
+                if (loc.getY() > p.getY())
                 {
-                    gameBoard.Move(new Point(p.getX(), 0), new Point(p.getX() + 1, p.getY()));
+                    gameBoard.Move(new Point(p.getX(), 0), new Point(p.getX(), p.getY()+1));
                 }
                 else
                 {
-                    gameBoard.Move(new Point(p.getX(), 7), new Point(p.getX() - 1, p.getY()));
+                    gameBoard.Move(new Point(p.getX(), 7), new Point(p.getX(), p.getY()-1));
                 }
+                gameBoard.Move(loc, p);
+                gameBoard.switchTurn();
             }
             else
             {

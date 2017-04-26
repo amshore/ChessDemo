@@ -49,6 +49,54 @@ public class Pawn : Piece {
             direction = -1;
     }
 
+    public override List<Vector3> canMoveEval()
+    {
+        List<Vector3> scores = new List<Vector3>();
+        List<Point> pts = canMoveList();
+        foreach(Point point in pts)
+        {
+            int basenum = pts.Count * (int)ScoreWeightsE.MOBILITY + (int)PieceWeightsE.PAWNWEIGHT;
+            basenum = basenum + ((getAllegiance() == 0) ? (point.getX()) : (7 - point.getX())) * (int)ScoreWeightsE.PAWNX + (point.getY()) * (7 - point.getY()) * (int)ScoreWeightsE.PAWNY;
+            if (gameBoard.pieceAt(point) != null)
+            {
+                switch ((((Piece)gameBoard.pieceAt(point).GetComponent("Piece")).getType()))
+                {
+                    case (PieceTypeE.PAWN):
+                        basenum = basenum + (int)PieceWeightsE.PAWNCAPUTURE;
+                        break;
+                    case (PieceTypeE.BISHOP):
+                        basenum = basenum + (int)PieceWeightsE.BISHOPCAPUTURE;
+                        break;
+                    case (PieceTypeE.KNIGHT):
+                        basenum = basenum + (int)PieceWeightsE.KNIGHTCAPUTURE;
+                        break;
+                    case (PieceTypeE.ROOK):
+                        basenum = basenum + (int)PieceWeightsE.ROOKCAPUTURE;
+                        break;
+                    case (PieceTypeE.QUEEN):
+                        basenum = basenum + (int)PieceWeightsE.QUEENCAPUTURE;
+                        break;
+                    case (PieceTypeE.KING):
+                        basenum = basenum + (int)PieceWeightsE.KINGCAPUTURE;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (System.Math.Abs(loc.getX() - point.getX()) == 1 && System.Math.Abs(loc.getY() - point.getY()) == 1)
+                basenum = basenum + (int)ScoreWeightsE.ENPASSANT;
+            if (System.Math.Abs(point.getX() - loc.getX()) == 2)
+                basenum = basenum + (int)ScoreWeightsE.DOUBLESTEP;
+            if(point.getX() == ((getAllegiance() == 0)?7:0))
+            {
+                basenum = basenum + (int)ScoreWeightsE.PROMOTE;
+            }
+            Debug.Log("Pawn at (" + loc.getX() + ", " + loc.getY() + ") can move to (" + point.getX() + ", " + point.getY() + ")  with weight " + basenum);
+            scores.Add(new Vector3(point.getX(), point.getY(), basenum));
+        }
+        return scores;
+    }
+
     /// <summary>
     /// Create list of valid moves 
     /// </summary>
@@ -70,13 +118,13 @@ public class Pawn : Piece {
                 retMoveList.Add(pt);
         }
 
-        Debug.Log("Pawn at (" + loc.getX() + ", " + loc.getY() + ") can move to: ");
+        /*Debug.Log("Pawn at (" + loc.getX() + ", " + loc.getY() + ") can move to: ");
         foreach (Point p in retMoveList)
         {
             Debug.Log("(" + p.getX() + ", " + p.getY() + ")");
         }
         if (retMoveList.Count == 0)
-            Debug.Log("No Possible Moves");
+            Debug.Log("No Possible Moves");*/
 
         return retMoveList;
     }
@@ -103,7 +151,7 @@ public class Pawn : Piece {
                 pAt = (Piece)gameBoard.pieceAt(p).GetComponent("Piece");
             if ((System.Math.Abs(dy) == 1) && pAt == null)
             {
-                if (gameBoard.getEnPassant() != null && gameBoard.getEnPassant() == p)
+                if (gameBoard.getEnPassant() != null && gameBoard.getEnPassant().getX() == p.getX() && gameBoard.getEnPassant().getY() == p.getY())
                     return MoveTypesE.ENPASSANT;
             }
             else if ((System.Math.Abs(dy) == 1) && (getAllegiance() != pAt.getAllegiance()))
@@ -137,7 +185,7 @@ public class Pawn : Piece {
             else
             {
                 if (mt == MoveTypesE.ENPASSANT)
-                    gameBoard.killEnPassant();
+                    gameBoard.killEnPassant(new Point(loc.getX(), p.getY()));
                 if (mt == MoveTypesE.PROMOTE)
                     gameBoard.promotePawn(loc);
                 gameBoard.Move(loc, p);

@@ -29,6 +29,47 @@ public class Rook : Piece {
 		
     }
 
+    public override List<Vector3> canMoveEval()
+    {
+        List<Vector3> scores = new List<Vector3>();
+        List<Point> pts = canMoveList();
+
+        foreach (Point point in pts)
+        {
+            int basenum = pts.Count * (int)ScoreWeightsE.MOBILITY + (int)PieceWeightsE.ROOKWEIGHT;
+            basenum = basenum + (point.getX()) * (7 - point.getX()) * (int)ScoreWeightsE.ROOKX + (point.getY()) * (7 - point.getY()) * (int)ScoreWeightsE.ROOKY;
+            if (gameBoard.pieceAt(point) != null)
+            {
+                switch ((((Piece)gameBoard.pieceAt(point).GetComponent("Piece")).getType()))
+                {
+                    case (PieceTypeE.PAWN):
+                        basenum = basenum + (int)PieceWeightsE.PAWNCAPUTURE;
+                        break;
+                    case (PieceTypeE.BISHOP):
+                        basenum = basenum + (int)PieceWeightsE.BISHOPCAPUTURE;
+                        break;
+                    case (PieceTypeE.KNIGHT):
+                        basenum = basenum + (int)PieceWeightsE.KNIGHTCAPUTURE;
+                        break;
+                    case (PieceTypeE.ROOK):
+                        basenum = basenum + (int)PieceWeightsE.ROOKCAPUTURE;
+                        break;
+                    case (PieceTypeE.QUEEN):
+                        basenum = basenum + (int)PieceWeightsE.QUEENCAPUTURE;
+                        break;
+                    case (PieceTypeE.KING):
+                        basenum = basenum + (int)PieceWeightsE.KINGCAPUTURE;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            Debug.Log("Rook at (" + loc.getX() + ", " + loc.getY() + ") can move to (" + point.getX() + ", " + point.getY() + ")  with weight " + basenum);
+            scores.Add(new Vector3(point.getX(), point.getY(), basenum));
+        }
+        return scores;
+    }
+
     /// <summary>
     /// Calculate points can move to moving along files and ranks until finding an illegal position
     /// </summary>
@@ -70,13 +111,13 @@ public class Rook : Piece {
                 retMoveList.Add(p);
         }
 
-        Debug.Log("Rook at (" + loc.getX() + ", " + loc.getY() + ") can move to: ");
+        /*Debug.Log("Rook at (" + loc.getX() + ", " + loc.getY() + ") can move to: ");
         foreach (Point p in retMoveList)
         {
             Debug.Log("(" + p.getX() + ", " + p.getY() + ")");
         }
         if (retMoveList.Count == 0)
-            Debug.Log("No Possible Moves");
+            Debug.Log("No Possible Moves");*/
 
         return retMoveList;
     }
