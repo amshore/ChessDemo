@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44659364, g: 0.4964301, b: 0.5748256, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -230,8 +230,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 533737700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.3, y: 37.01, z: -0.54}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 50, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0}
   m_Children: []
   m_Father: {fileID: 114125719}
   m_RootOrder: 0
@@ -243,14 +243,14 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 533737700}
-  m_Text: Chess Vision
+  m_Text: Singleplayer
   m_OffsetZ: 0
-  m_CharacterSize: 3
+  m_CharacterSize: 0.8
   m_LineSpacing: 1
-  m_Anchor: 0
-  m_Alignment: 0
+  m_Anchor: 1
+  m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 500
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -316,7 +316,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 682376101}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -65.9, y: -38, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: -45, z: 0}
+>>>>>>> origin/master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 114125719}
@@ -333,15 +337,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b29ec22978c240f184a130c799c46f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSinglePlayer: 1
+  isSinglePlayer: 0
   isMultiPlayer: 0
   isEasy: 0
   isMedium: 0
   isHard: 0
   isBack: 1
-  isPuzzles: 0
-  isPuzzle1: 0
-  isPuzzle2: 0
+  isPuzzle: 0
 --- !u!114 &682376104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,8 +365,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.3, y: 1.4523438, z: 0}
-  m_Center: {x: 3.15, y: -0.7261719, z: 0}
+  m_Size: {x: 20, y: 12, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!102 &682376106
 TextMesh:
   serializedVersion: 3
@@ -374,12 +376,12 @@ TextMesh:
   m_GameObject: {fileID: 682376101}
   m_Text: Back
   m_OffsetZ: 0
-  m_CharacterSize: 2
+  m_CharacterSize: 0.5
   m_LineSpacing: 1
-  m_Anchor: 0
-  m_Alignment: 0
+  m_Anchor: 4
+  m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 100
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -445,7 +447,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 713223334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.3, y: 6.9, z: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 114125719}
@@ -460,12 +462,12 @@ TextMesh:
   m_GameObject: {fileID: 713223334}
   m_Text: Medium
   m_OffsetZ: 0
-  m_CharacterSize: 2
+  m_CharacterSize: 0.5
   m_LineSpacing: 1
-  m_Anchor: 0
-  m_Alignment: 0
+  m_Anchor: 4
+  m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 100
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -525,8 +527,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.3, y: 1.4523438, z: 0}
-  m_Center: {x: 3.15, y: -0.7261719, z: 0}
+  m_Size: {x: 18, y: 6, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &713223340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,15 +540,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b29ec22978c240f184a130c799c46f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSinglePlayer: 1
+  isSinglePlayer: 0
   isMultiPlayer: 0
   isEasy: 0
   isMedium: 1
   isHard: 0
   isBack: 0
-  isPuzzles: 0
-  isPuzzle1: 0
-  isPuzzle2: 0
+  isPuzzle: 0
 --- !u!1 &828080602
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +574,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 828080602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.47, y: 15.7, z: 0}
+  m_LocalPosition: {x: 0, y: 18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 114125719}
@@ -589,12 +589,12 @@ TextMesh:
   m_GameObject: {fileID: 828080602}
   m_Text: Easy
   m_OffsetZ: 0
-  m_CharacterSize: 2
+  m_CharacterSize: 0.5
   m_LineSpacing: 1
-  m_Anchor: 0
-  m_Alignment: 0
+  m_Anchor: 4
+  m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 100
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -654,8 +654,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.1, y: 1.4523438, z: 0}
-  m_Center: {x: 3.55, y: -0.7261719, z: 0}
+  m_Size: {x: 18, y: 6, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &828080608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,15 +667,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b29ec22978c240f184a130c799c46f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSinglePlayer: 1
+  isSinglePlayer: 0
   isMultiPlayer: 0
   isEasy: 1
   isMedium: 0
   isHard: 0
   isBack: 0
-  isPuzzles: 0
-  isPuzzle1: 0
-  isPuzzle2: 0
+  isPuzzle: 0
 --- !u!1 &985877637
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +757,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 985877637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -76.3}
+  m_LocalPosition: {x: 0, y: 0, z: -120}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -792,7 +790,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1019201473}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.44, y: -3.9, z: 0}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 114125719}
@@ -809,15 +807,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b29ec22978c240f184a130c799c46f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSinglePlayer: 1
+  isSinglePlayer: 0
   isMultiPlayer: 0
   isEasy: 0
   isMedium: 0
   isHard: 1
   isBack: 0
-  isPuzzles: 0
-  isPuzzle1: 0
-  isPuzzle2: 0
+  isPuzzle: 0
 --- !u!114 &1019201476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,8 +835,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.3, y: 1.4523438, z: 0}
-  m_Center: {x: 3.15, y: -0.7261719, z: 0}
+  m_Size: {x: 18, y: 6, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!102 &1019201478
 TextMesh:
   serializedVersion: 3
@@ -850,12 +846,12 @@ TextMesh:
   m_GameObject: {fileID: 1019201473}
   m_Text: Hard
   m_OffsetZ: 0
-  m_CharacterSize: 2
+  m_CharacterSize: 0.5
   m_LineSpacing: 1
-  m_Anchor: 0
-  m_Alignment: 0
+  m_Anchor: 4
+  m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 100
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -972,8 +968,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2051817488}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.25091, y: 1.91, z: -0.33}
-  m_LocalScale: {x: 18.681656, y: 9.990205, z: 9.990205}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 15, y: 1, z: 15}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2

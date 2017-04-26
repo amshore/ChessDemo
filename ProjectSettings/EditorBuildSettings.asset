@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+<<<<<<< HEAD
   - enabled: 0
     path: Assets/basictest1.unity
     guid: fb89736733207a341ba38e645a40253f
+=======
+>>>>>>> origin/master
   - enabled: 1
     path: Assets/MainMenu.unity
     guid: a0ca1ebbc08de4c6fb15452c484d46c7
@@ -15,15 +18,19 @@ EditorBuildSettings:
     path: Assets/mainMenuAISelection.unity
     guid: 60315a229e3c044328e0004366344191
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/puzzlesSelectedScene.unity
     guid: 6ec64bafe93a248a8b502482a5b49c00
   - enabled: 1
+=======
+>>>>>>> origin/master
     path: Assets/mainGameAIEasy.unity
     guid: 74dbca688e5c843f499182db4827715a
   - enabled: 1
     path: Assets/mainGameAIMedium.unity
     guid: f5e17cfc1cf0d43a1b3386262ef3f331
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/MainGameAIHard.unity
     guid: 6b58cf6f1cae3448ab0f001f19a8e0b5
   - enabled: 1
@@ -53,3 +60,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/PuzzleMenuAISelectionScene.unity
     guid: 551d79d9ab2b6438bbb168096e1ed070
+=======
+    path: Assets/puzzlesSelectedScene.unity
+    guid: 6ec64bafe93a248a8b502482a5b49c00
+  - enabled: 1
+    path: Assets/PuzzleGame1.unity
+    guid: 1bfe90528190fb049ae32d7b86b7296c
+  - enabled: 1
+    path: Assets/PuzzleGame2.unity
+    guid: 1dc401fafb4d00a4894ca7cbb1e362de
+>>>>>>> origin/master
