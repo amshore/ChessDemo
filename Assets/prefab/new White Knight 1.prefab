@@ -114,9 +114,11 @@ GameObject:
   - component: {fileID: 95611407472612120}
   - component: {fileID: 23490636500933308}
   - component: {fileID: 114079445909732474}
+  - component: {fileID: 33601044082848218}
+  - component: {fileID: 65124483203515030}
   m_Layer: 0
   m_Name: new White Knight 1
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -376,6 +378,25 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1661964129535130}
   m_Mesh: {fileID: 4300000, guid: 263719d48ed55485c8ba4faaf1e1a56c, type: 3}
+--- !u!33 &33601044082848218
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1732734019337630}
+  m_Mesh: {fileID: 4300000, guid: 263719d48ed55485c8ba4faaf1e1a56c, type: 3}
+--- !u!65 &65124483203515030
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1732734019337630}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95611407472612120
 Animator:
   serializedVersion: 3
